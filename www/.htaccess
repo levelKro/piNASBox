@@ -1,0 +1,21 @@
+#Options +FollowSymLinks
+RewriteEngine On											
+Options -Indexes 	
+RewriteBase /
+
+#Default
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^download/(.*)$ index.php?file=$1 [QSA,L]	
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ index.php [QSA,L]	 
+
+#Errors
+#ErrorDocument 500 /
+#ErrorDocument 404 /
+#ErrorDocument 401 /
+#ErrorDocument 403 /
+
+<FilesMatch "\.(?i:doc|odf|pdf|rtf|txt|mp3|m4a|avi|wav|au|mkv|pls|m3u|zip|exe|rar)$">
+  Header set Content-Disposition attachment
+</FilesMatch> 
