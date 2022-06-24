@@ -21,10 +21,14 @@ from gpiozero import Button
 
 class mainFrame(wx.Frame):
     def __init__(self, *args, **kwds):
+
         
-        self.buttonA = Button(19)
+        self.config = configparser.ConfigParser()
+        self.config.read('config.ini')
+
+        self.buttonA = Button(self.config['system']['buttona'])
         self.buttonApressed = False
-        self.buttonB = Button(26)
+        self.buttonB = Button(self.config['system']['buttonb'])
         self.buttonBpressed = False
         
         # begin wxGlade: mainFrame.__init__
@@ -375,10 +379,6 @@ class mainFrame(wx.Frame):
 
         #self.Bind(wx.EVT_BUTTON, self.onPowerOff, self.btn_poweroff)
         #self.Bind(wx.EVT_BUTTON, self.onReboot, self.btn_reboot)
-        
-        
-        self.config = configparser.ConfigParser()
-        self.config.read('config.ini')
         
         self.statsLock=False
         self.showUpdate()
