@@ -122,6 +122,8 @@ In the */home/pi/.profile* file, add these line at the end.
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && /home/pi/pinasbox/pinasbox.sh
 ```
 
+Setup the Windows sharing files.
+
 In the */etc/samba/smb.conf* file, add these line at the end.
 
 ```
@@ -133,7 +135,6 @@ In the */etc/samba/smb.conf* file, add these line at the end.
    read only = no
    writable = yes
    guest ok = yes
-
 
 [DRIVE A]
    path = /mnt/hdd1
@@ -176,7 +177,7 @@ In the */etc/apache2/sites-available/000-default.conf* and */etc/apache2/sites-a
 ```
 For this one.
 ```
-/homepi/pinasbox/www
+/home/pi/pinasbox/www
 ```
 
 And change this value
