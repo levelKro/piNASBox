@@ -87,11 +87,11 @@ And verify if you see the sensor with this command.
 ls /sys/bus/w1/devices
 ```
 
-If you see a item beginning with "28-", the sensor is corectly installed.
+If you see a item beginning with "28-", the sensor is correctly installed.
 
 ### *Real Time CLock (RTC) module*
 
-I suggest to instal a RTC module with you project, because you can use the drive on network without Internet connection.
+I suggest to install a RTC module with you project, because you can use the drive on network without Internet connection.
 
 See on Internet for a tutorial to how setup a RTC on Rasberry Pi.
 
@@ -213,4 +213,4 @@ ln -s /mnt/hdd3 "/home/pi/pinasbox/www/get/Drive C"
 
 ## Buttons
 
-Be default, wen use the GPIO #19 and #26, you can edit them, and other settings into the */home/pi/pinasbox/config.ini* file.
+Be default, wen use the GPIO #19 (reboot) and #26 (poweroff), you can edit them, and other settings into the */home/pi/pinasbox/config.ini* file.
