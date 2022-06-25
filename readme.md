@@ -162,8 +162,12 @@ In the */etc/samba/smb.conf* file, add these line at the end.
    writable = yes
    guest ok = yes
 ```
+Enable the modules Rewrite and Headers in apache.
 
+```
 sudo a2enmod rewrite
+sudo a2enmod headers
+```
 
 In the */etc/apache2/sites-available/000-default.conf* and */etc/apache2/sites-available/apache2.conf* files, change these lines.
 
@@ -184,6 +188,7 @@ for this one.
 AllowOverride All
 ```
 
+Restarting the Raspberry Pi.
 
 ## Adding Hard drives
 
