@@ -194,14 +194,14 @@ Restarting the Raspberry Pi.
 
 The PiNASBox support 3 Hard drives, if you need, more, you need to edit the scripts.
 
-Each drive must bu set a mount into this style;
+Each drive must be set a mount into this style;
 
 - /mnt/hdd1
 - /mnt/hdd2
 - /mnt/hdd3
 
 
-For beter performance, use the UUID to link mount to hard drive. If you need help for manage your hard drives, you can install Webmin. Is what I do.
+For better performance, use the UUID to link mount to hard drive. If you need help for manage your hard drives, you can install Webmin. Is what I do. If you use less than 3 drives, is not a problem, only mount the drive you have.
 
 For use the Web file explorer, you need create Symbolic link into web folder, for that, execute this commands.
 
