@@ -211,3 +211,6 @@ ln -s /mnt/hdd2 "/home/pi/pinasbox/www/get/Drive B"
 ln -s /mnt/hdd3 "/home/pi/pinasbox/www/get/Drive C"
 ```
 
+## Buttons
+
+Be default, wen use the GPIO #19 and #26, you can edit them, and other settings into the */home/pi/pinasbox/config.ini* file.
