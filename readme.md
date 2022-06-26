@@ -1,7 +1,7 @@
 # PiNASBox
 Turn any Raspberry Pi into a great NAS Box.
 
-![Screenshot](screenshot.jpg)
+![Screenshot](screenshot220626.jpg)
 
 ### Features
 
