@@ -1,6 +1,19 @@
 # PiNASBox
 Turn any Raspberry Pi into a great NAS Box.
 
+![Screenshot](screenshot.jpg)
+
+### Features
+
+- Samba (Windows) share
+- Web Interface
+- Web control (with piWebCtrl)
+- LCD monitoring (480x320 3.5" optimised)
+- Temperature monitoring (DS18B20)
+- Support up to 3 hard drives
+
+Please note, this version is optimised to use with Raspberry Pi Zero v1.3 with the Ethernet+USB hat. If you use it with wlan, or on other Raspberry Pi version, you need to be aware you have do some debug to do. 
+
 ## Require
 
 * Raspberry Pi (Zero is great choice)
