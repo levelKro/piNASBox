@@ -303,14 +303,14 @@ class mainFrame(wx.Frame):
         self.val_space_pc.SetForegroundColour(wx.Colour(82, 209, 247))
         self.val_space_pc.SetFont(wx.Font(12, wx.FONTFAMILY_DECORATIVE, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, 0, "Arial"))
         grid_sizer_7.Add(self.val_space_pc, 0, wx.ALIGN_CENTER_VERTICAL, 0)
-
+        
+        sizer_4 = wx.StaticBoxSizer(wx.StaticBox(self.panel_1, wx.ID_ANY, "State"), wx.HORIZONTAL)
+        sizer_2.Add(sizer_4, 1, wx.ALL | wx.EXPAND, 2)
         self.val_status = wx.StaticText(self.panel_1, wx.ID_ANY, " ")
         self.val_status.SetForegroundColour(wx.Colour(255, 255, 0))
         self.val_status.SetFont(wx.Font(8, wx.FONTFAMILY_MODERN, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, 0, "Courier New"))
-        sizer_2.Add(self.val_status, 0, 0, 10)
+        sizer_4.Add(self.val_status, 0, 0, 10)
         
-        
-
         grid_sizer_1.Add((5, 5), 0, 0, 0) # replacement for code bottom
 # 
 #         grid_sizer_2 = wx.FlexGridSizer(4, 3, 0, 0)
@@ -554,12 +554,12 @@ class mainFrame(wx.Frame):
         if(self.spaceTotal != 0 and self.spaceUse != 0):
             self.spacePercent=((self.spaceUse * 100) / self.spaceTotal)
         else:
-            self.spacePercent="0%"
+            self.spacePercent=0
         self.val_space.SetLabel(self.getSize(self.spaceUse)+"/"+self.getSize(self.spaceTotal))
         self.val_space_pc.SetLabel(str(round(self.spacePercent,1))+"%")
                 
     def showUpdate(self):
-        self.status=""
+        self.status=" "
         self.val_name.SetLabel(self.getSys("name"))
         self.val_ip.SetLabel(self.getSys("net"))        
         self.val_upload.SetLabel(self.getSys("upload"))        
@@ -583,6 +583,7 @@ class mainFrame(wx.Frame):
             self.statsLock=True
             self.val_status.SetLabel("Reboot the device...")
             wx.CallLater(2000, os.system(self.config['cli']['reboot']))
+            time.sleep(2)
         elif self.buttonA.is_pressed:
             pass
         else:
@@ -593,6 +594,7 @@ class mainFrame(wx.Frame):
             self.statsLock=True
             self.val_status.SetLabel("Poweroff the device...")
             wx.CallLater(2000, os.system(self.config['cli']['poweroff']))
+            time.sleep(2)
         elif self.buttonB.is_pressed:
             pass
         else:
