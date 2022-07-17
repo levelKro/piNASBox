@@ -209,13 +209,32 @@ Restarting the Raspberry Pi.
 The PiNASBox support 3 Hard drives, if you need, more, you need to edit the scripts.
 
 Each drive must be set a mount into this style;
+```
+sudo mkdir /mnt/hdd1
+sudo mkdir /mnt/hdd2
+sudo mkdir /mnt/hdd3
+```
 
-- /mnt/hdd1
-- /mnt/hdd2
-- /mnt/hdd3
+Adding USB drive into FSTab is possible, but can lock the Raspberry Pi if the drive is not found or is missing. For best result, you must install "USBMOUNT".
 
+```
+sudo apt install usbmount
+```
 
-For better performance, use the UUID to link mount to hard drive. If you need help for manage your hard drives, you can install Webmin. Is what I do. If you use less than 3 drives, is not a problem, only mount the drive you have.
+After, you need to edit the Configuration file for use the USB drives with the desired path.
+
+```
+sudo nano /etc/usbmount/usbmount.conf
+```
+And replace this line 
+```
+MOUNTPOINTS="/media/usb0 /media/usb1 /media/usb2 /media/usb3
+             /media/usb4 /media/usb5 /media/usb6 /media/usb7"
+```
+For this line
+```
+MOUNTPOINTS="/mnt/hdd1 /mnt/hdd2 /mnt/hdd3"
+```
 
 For use the Web file explorer, you need create Symbolic link into web folder, for that, execute this commands.
 
